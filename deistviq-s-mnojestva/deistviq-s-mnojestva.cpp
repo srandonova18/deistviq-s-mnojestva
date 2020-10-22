@@ -43,6 +43,16 @@ void razlika(int a[], int n, int b[], int m) {
     delete[]c;
 }
 
+void sechenie(int a[], int n, int b[], int m) {
+    int* c = new int[n + m];
+    int k = 0;
+    sravnenie(a, n, b, m, "!=", c, k);
+    for (int i = 0; i < k; i++)
+        cout << c[i] << " ";
+
+    delete[]c;
+}
+
 
 
 int main() {

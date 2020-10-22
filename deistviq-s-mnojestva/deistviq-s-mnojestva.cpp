@@ -56,6 +56,8 @@ void sechenie(int a[], int n, int b[], int m) {
 
 
 int main() {
+    int a[10] = { 3,5,6,11,9,23,7,21,18,0 };
+    int b[10] = { 4,8,9,0,13,22,34,11,1,45 };
 
-   
+    sechenie(b, 10, a, 10);
 }

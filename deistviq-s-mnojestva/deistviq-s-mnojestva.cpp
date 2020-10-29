@@ -5,6 +5,7 @@ using namespace std;
 int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 {
 	int count = 0;
+
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -14,6 +15,7 @@ int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 				count++;
 			}
 		}
+
 		if (sign == "==")
 		{
 			if (count == 0)
@@ -22,6 +24,7 @@ int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 				k++;
 			}
 		}
+
 		else if (sign == "!=")
 		{
 			if (count != 0)
@@ -33,6 +36,7 @@ int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 
 		count = 0;
 	}
+
 	return c;
 }
 
@@ -40,9 +44,12 @@ void razlika(int a[], int n, int b[], int m)
 {
 	int* c = new int[n + m];
 	int k = 0;
+
 	sravnenie(a, n, b, m, "==", c, k);
+
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
+
 	delete[]c;
 }
 
@@ -50,9 +57,12 @@ void sechenie(int a[], int n, int b[], int m)
 {
 	int* c = new int[n + m];
 	int k = 0;
+
 	sravnenie(a, n, b, m, "!=", c, k);
+
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
+
 	delete[]c;
 }
 
@@ -72,6 +82,20 @@ void obedinenie(int a[], int n, int b[], int m) {
 
 	delete[]c;
 
+}
+
+void simetrichna_razlika(int a[], int n, int b[], int m) {
+	int* c = new int[n + m];
+	int k = 0;
+
+	sravnenie(a, n, b, m, "==", c, k);
+
+	sravnenie(b, m, a, n, "==", c, k);
+
+	for (int i = 0; i < k; i++)
+		cout << c[i] << " ";
+
+	delete[]c;
 }
 
 void showWelcome()

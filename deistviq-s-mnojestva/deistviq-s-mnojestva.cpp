@@ -64,12 +64,20 @@ void showWelcome()
 
 void showMenu()
 {
-	    cout << "MAIN MENU"<<endl<<endl;
-		cout << "1. Sravnenie" << endl;
-		cout << "2. Razlika" << endl;
-		cout << "3. Sechenie" << endl;
-		cout << "4. Quit " << endl<<endl;
-		cout << "Please choose an option: ";
+
+	cout << "+---------------------------+" << endl;
+	cout << "|                           |" << endl;
+	cout << "|            MENU           |" << endl;
+	cout << "|                           |" << endl;
+	cout << "+---------------------------+" << endl;
+
+	cout << endl;
+	cout << "1. Sravnenie" << endl;
+	cout << "2. Razlika" << endl;
+	cout << "3. Sechenie" << endl;
+	cout << "4. Quit " << endl << endl;
+	cout << "Please choose an option: ";
+	cout << endl;
 }
 
 void mainmenu()
@@ -102,6 +110,9 @@ void mainmenu()
 			case 3:
 				int razlika();
 				break;
+			case QUIT_CHOICE:
+				cout << "Exiting....\n";
+				break;
 			}
 		}
 	} while (choice != QUIT_CHOICE);
@@ -109,9 +120,10 @@ void mainmenu()
 
 
 
-int main() 
+int main()
 {
 	int a[10] = { 3,5,6,11,9,23,7,21,18,0 };
 	int b[10] = { 4,8,9,0,13,22,34,11,1,45 };
+	system("Color 5");
 	mainmenu();
 }

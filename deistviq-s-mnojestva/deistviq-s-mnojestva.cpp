@@ -98,6 +98,23 @@ void simetrichna_razlika(int a[], int n, int b[], int m) {
 	delete[]c;
 }
 
+bool isPodmnojestwo(int a[], int n, int b[], int m) {
+	int count = 0;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (a[i] == b[j]) {
+				count++;
+			}
+		}
+	}
+
+	if (count == n)
+		return true;
+
+	return false;
+}
+
 void showWelcome()
 {
 	cout << "Welcome to our program" << endl << endl;
@@ -158,7 +175,6 @@ void mainmenu()
 		}
 	} while (choice != QUIT_CHOICE);
 }
-
 
 
 int main()

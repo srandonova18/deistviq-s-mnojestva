@@ -188,7 +188,7 @@ void mainMenu()
 	enterArrayElements(b, m, "second");
 
 	int choice;
-	const int unionChoice = 1, intersectionChoice = 2, subtractionChoice = 3, symmetricalSubtractionChoice=4, quitChoice = 5;
+	 
 	
 	do
 	{
@@ -198,7 +198,7 @@ void mainMenu()
 
 		cout << endl;
 
-		while ((choice < unionChoice) or (choice > quitChoice))
+		while ((choice < 1) or (choice > 5))
 		{
 			cout << "Please enter a valid menu option: ";
 			cin >> choice;
@@ -234,7 +234,7 @@ void mainMenu()
 
 		cout << endl << endl<<endl;
 		
-	} while (choice != quitChoice);
+	} while (choice != 5);
 }
 
 

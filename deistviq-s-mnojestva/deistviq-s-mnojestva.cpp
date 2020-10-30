@@ -84,7 +84,7 @@ void sechenie(int a[], int n, int b[], int m)
 int whichArray() {
 	int choice;
 
-	cout << "Razlikata na koi masiw iskate da namerite?" << endl;
+	cout << "Which array do you want to subtract from?" << endl;
 	cout << "1. The first one (A) - A \\ B" << endl;
 	cout << "2. The second one (B) - B \\ A" << endl;
 
@@ -107,13 +107,13 @@ void razlika(int a[], int n, int b[], int m)
 
 	if (whichArray() == 1) {
 		cout << endl;
-		cout << "Razlikata na mnojestwata (A \\ B) e: ";
+		cout << "The subtraction of the sets (A \\ B) is: ";
 		sravnenie(a, n, b, m, "==", c, k);
 	}
 	else
 	{
 		cout << endl;
-		cout << "Razlikata na mnojestwata (B \\ A) e: ";
+		cout << "The subtraction of the sets (B \\ A) is: ";
 		sravnenie(b, m, a, n, "==", c, k);
 	}
 
@@ -169,10 +169,10 @@ void showMenu()
 	cout << "+---------------------------+" << endl;
 
 	cout << endl;
-	cout << "1. Obedinenie" << endl;
-	cout << "2. Sechenie" << endl;
-	cout << "3. Razlika" << endl;
-	cout << "4. Simetrichna razlika" << endl;
+	cout << "1. Union" << endl;
+	cout << "2. Intersection" << endl;
+	cout << "3. Subtraction (difference)" << endl;
+	cout << "4. Symmetrical subtraction" << endl;
 	cout << "5. Quit " << endl << endl;
 	cout << "Please choose an option: ";
 }
@@ -208,12 +208,12 @@ void mainMenu()
 		switch (choice)
 		{
 			case 1:
-				cout << "Obedinenieto na mnojestwata (A U B) e: ";
+				cout << "The union of the sets (A U B) is: ";
 				obedinenie(a,n,b,m);
 				break;
 
 			case 2:
-				cout << "Sechenieto na mnojestwata (A  B) e: ";
+				cout << "The intersection of the sets (A  B) is: ";
 				sechenie(a, n, b, m);
 				break;
 
@@ -222,7 +222,7 @@ void mainMenu()
 				break;
 
 			case 4:
-				cout << "Simetrichnata razlika na mnojestwata e: ";
+				cout << "The symmetrical subtraction of the sets is: ";
 				simetrichnaRazlika(a, n, b, m);
 				break;
 

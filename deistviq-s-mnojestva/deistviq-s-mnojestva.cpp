@@ -42,7 +42,7 @@ int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 
 void razlika(int a[], int n, int b[], int m)
 {
-	int* c = new int[n + m];
+	int *c = new int[(double)n + m];
 	int k = 0;
 
 	sravnenie(a, n, b, m, "==", c, k);
@@ -55,7 +55,7 @@ void razlika(int a[], int n, int b[], int m)
 
 void sechenie(int a[], int n, int b[], int m)
 {
-	int* c = new int[n + m];
+	int* c = new int[(double)n + m];
 	int k = 0;
 
 	sravnenie(a, n, b, m, "!=", c, k);
@@ -67,7 +67,7 @@ void sechenie(int a[], int n, int b[], int m)
 }
 
 void obedinenie(int a[], int n, int b[], int m) {
-	int* c = new int[n + m];
+	int* c = new int[(double)n + m];
 	int k = 0;
 
 	for (int i = 0; i < n; i++) {
@@ -85,7 +85,7 @@ void obedinenie(int a[], int n, int b[], int m) {
 }
 
 void simetrichna_razlika(int a[], int n, int b[], int m) {
-	int* c = new int[n + m];
+	int* c = new int[(double)n + m];
 	int k = 0;
 
 	sravnenie(a, n, b, m, "==", c, k);

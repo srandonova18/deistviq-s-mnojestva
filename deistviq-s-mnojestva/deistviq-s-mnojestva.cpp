@@ -12,7 +12,7 @@ void enterArrayElements(int array[], int& size, string number) {
 	cout << endl << endl;
 }
 
-int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
+int* comparison(int a[], int n, int b[], int m, string sign, int* c, int& k)
 {
 	int count = 0;
 
@@ -50,7 +50,7 @@ int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 	return c;
 }
 
-void obedinenie(int a[], int n, int b[], int m) {
+void unionOfSets(int a[], int n, int b[], int m) {
 	int* c = new int[(double)n + m];
 	int k = 0;
 
@@ -59,7 +59,7 @@ void obedinenie(int a[], int n, int b[], int m) {
 		k++;
 	}
 
-	sravnenie(b, m, a, n, "==", c, k);
+	comparison(b, m, a, n, "==", c, k);
 
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
@@ -68,12 +68,12 @@ void obedinenie(int a[], int n, int b[], int m) {
 
 }
 
-void sechenie(int a[], int n, int b[], int m)
+void intersectionOfSets(int a[], int n, int b[], int m)
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
 
-	sravnenie(a, n, b, m, "!=", c, k);
+	comparison(a, n, b, m, "!=", c, k);
 
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
@@ -99,7 +99,7 @@ int whichArray() {
 	return choice;
 }
 
-void razlika(int a[], int n, int b[], int m)
+void subtractionOfSets(int a[], int n, int b[], int m)
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
@@ -108,13 +108,13 @@ void razlika(int a[], int n, int b[], int m)
 	if (whichArray() == 1) {
 		cout << endl;
 		cout << "The subtraction of the sets (A \\ B) is: ";
-		sravnenie(a, n, b, m, "==", c, k);
+		comparison(a, n, b, m, "==", c, k);
 	}
 	else
 	{
 		cout << endl;
 		cout << "The subtraction of the sets (B \\ A) is: ";
-		sravnenie(b, m, a, n, "==", c, k);
+		comparison(b, m, a, n, "==", c, k);
 	}
 
 	for (int i = 0; i < k; i++)
@@ -123,13 +123,13 @@ void razlika(int a[], int n, int b[], int m)
 	delete[]c;
 }
 
-void simetrichnaRazlika(int a[], int n, int b[], int m) {
+void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) {
 	int* c = new int[(double)n + m];
 	int k = 0;
 
-	sravnenie(a, n, b, m, "==", c, k);
+	comparison(a, n, b, m, "==", c, k);
 
-	sravnenie(b, m, a, n, "==", c, k);
+	comparison(b, m, a, n, "==", c, k);
 
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
@@ -188,7 +188,7 @@ void mainMenu()
 	enterArrayElements(b, m, "second");
 
 	int choice;
-	const int obedinenieChoice = 1, sechenieChoice = 2, razlikaChoice = 3, simetrichnaRazlikaChoice=4, quitChoice = 5;
+	const int unionChoice = 1, intersectionChoice = 2, subtractionChoice = 3, symmetricalSubtractionChoice=4, quitChoice = 5;
 	
 	do
 	{
@@ -198,7 +198,7 @@ void mainMenu()
 
 		cout << endl;
 
-		while ((choice < obedinenieChoice) or (choice > quitChoice))
+		while ((choice < unionChoice) or (choice > quitChoice))
 		{
 			cout << "Please enter a valid menu option: ";
 			cin >> choice;
@@ -209,21 +209,21 @@ void mainMenu()
 		{
 			case 1:
 				cout << "The union of the sets (A U B) is: ";
-				obedinenie(a,n,b,m);
+				unionOfSets(a,n,b,m);
 				break;
 
 			case 2:
 				cout << "The intersection of the sets (A  B) is: ";
-				sechenie(a, n, b, m);
+				intersectionOfSets(a, n, b, m);
 				break;
 
 			case 3:
-				razlika(a, n, b, m);
+				subtractionOfSets(a, n, b, m);
 				break;
 
 			case 4:
 				cout << "The symmetrical subtraction of the sets is: ";
-				simetrichnaRazlika(a, n, b, m);
+				symmetricalSubtractionOfSets(a, n, b, m);
 				break;
 
 			case 5:

@@ -40,32 +40,6 @@ int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 	return c;
 }
 
-void razlika(int a[], int n, int b[], int m)
-{
-	int *c = new int[(double)n + m];
-	int k = 0;
-
-	sravnenie(a, n, b, m, "==", c, k);
-
-	for (int i = 0; i < k; i++)
-		cout << c[i] << " ";
-
-	delete[]c;
-}
-
-void sechenie(int a[], int n, int b[], int m)
-{
-	int* c = new int[(double)n + m];
-	int k = 0;
-
-	sravnenie(a, n, b, m, "!=", c, k);
-
-	for (int i = 0; i < k; i++)
-		cout << c[i] << " ";
-
-	delete[]c;
-}
-
 void obedinenie(int a[], int n, int b[], int m) {
 	int* c = new int[(double)n + m];
 	int k = 0;
@@ -82,6 +56,32 @@ void obedinenie(int a[], int n, int b[], int m) {
 
 	delete[]c;
 
+}
+
+void sechenie(int a[], int n, int b[], int m)
+{
+	int* c = new int[(double)n + m];
+	int k = 0;
+
+	sravnenie(a, n, b, m, "!=", c, k);
+
+	for (int i = 0; i < k; i++)
+		cout << c[i] << " ";
+
+	delete[]c;
+}
+
+void razlika(int a[], int n, int b[], int m)
+{
+	int* c = new int[(double)n + m];
+	int k = 0;
+
+	sravnenie(a, n, b, m, "==", c, k);
+
+	for (int i = 0; i < k; i++)
+		cout << c[i] << " ";
+
+	delete[]c;
 }
 
 void simetrichnaRazlika(int a[], int n, int b[], int m) {
@@ -130,22 +130,23 @@ void showMenu()
 	cout << "+---------------------------+" << endl;
 
 	cout << endl;
-	cout << "1. Sravnenie" << endl;
-	cout << "2. Razlika" << endl;
-	cout << "3. Sechenie" << endl;
-	cout << "4. Quit " << endl << endl;
+	cout << "1. Obedinenie" << endl;
+	cout << "2. Sechenie" << endl;
+	cout << "3. Razlika" << endl;
+	cout << "4. Simetrichna razlika" << endl;
+	cout << "5. Quit " << endl << endl;
 	cout << "Please choose an option: ";
-	cout << endl;
 }
 
-void mainmenu()
+void mainMenu(int a[], int n, int b[], int m)
 {
 	int choice;
-	const int obedinenieChoice = 1, sechenieChoice = 2, razlikaChoice = 3, quitChoice = 4;
+	const int obedinenieChoice = 1, sechenieChoice = 2, razlikaChoice = 3, simetrichnaRazlikaChoice=4, quitChoice = 5;
 	showWelcome();
-	showMenu();
+	
 	do
 	{
+		showMenu();
 		cin >> choice;
 		while (choice < obedinenieChoice || choice > quitChoice)
 		{
@@ -158,20 +159,28 @@ void mainmenu()
 			switch (choice)
 			{
 			case 1:
-				int obedinenie();
+				obedinenie(a,n,b,m);
+				cout << endl;
 				break;
 
 			case 2:
-				int sechenie();
+				sechenie(a, n, b, m);
+				cout << endl;
 				break;
 
 			case 3:
-				int razlika();
+				razlika(a, n, b, m);
 				break;
 			case 4:
+				simetrichnaRazlika(a, n, b, m);
+				cout << endl;
+				break;
+			case 5:
 				cout << "Exiting....\n";
 				break;
 			}
+
+			cout << endl << endl;
 		}
 	} while (choice != quitChoice);
 }
@@ -182,5 +191,5 @@ int main()
 	int a[10] = { 3,5,6,11,9,23,7,21,18,0 };
 	int b[10] = { 4,8,9,0,13,22,34,11,1,45 };
 	system("Color 5");
-	mainmenu();
+	mainMenu(a,10,b,10);
 }

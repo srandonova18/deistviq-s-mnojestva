@@ -84,7 +84,7 @@ void obedinenie(int a[], int n, int b[], int m) {
 
 }
 
-void simetrichna_razlika(int a[], int n, int b[], int m) {
+void simetrichnaRazlika(int a[], int n, int b[], int m) {
 	int* c = new int[(double)n + m];
 	int k = 0;
 
@@ -141,19 +141,19 @@ void showMenu()
 void mainmenu()
 {
 	int choice;
-	const int obedinenie_choice = 1, sechenie_choise = 2, razlika_choise = 3, QUIT_CHOICE = 4;
+	const int obedinenieChoice = 1, sechenieChoice = 2, razlikaChoice = 3, quitChoice = 4;
 	showWelcome();
 	showMenu();
 	do
 	{
 		cin >> choice;
-		while (choice < obedinenie_choice || choice > QUIT_CHOICE)
+		while (choice < obedinenieChoice || choice > quitChoice)
 		{
 			cout << "Please enter a valid menu choice: ";
 			cin >> choice;
 		}
 
-		if (choice != QUIT_CHOICE)
+		if (choice != quitChoice)
 		{
 			switch (choice)
 			{
@@ -168,12 +168,12 @@ void mainmenu()
 			case 3:
 				int razlika();
 				break;
-			case QUIT_CHOICE:
+			case 4:
 				cout << "Exiting....\n";
 				break;
 			}
 		}
-	} while (choice != QUIT_CHOICE);
+	} while (choice != quitChoice);
 }
 
 

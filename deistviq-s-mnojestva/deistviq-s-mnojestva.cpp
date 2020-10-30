@@ -84,10 +84,6 @@ void intersectionOfSets(int a[], int n, int b[], int m)
 int whichArray() {
 	int choice;
 
-	cout << "Which array do you want to subtract from?" << endl;
-	cout << "1. The first one (A) - A \\ B" << endl;
-	cout << "2. The second one (B) - B \\ A" << endl;
-
 	cout << "Enter an option: ";
 	cin >> choice;
 
@@ -104,6 +100,9 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 	int* c = new int[(double)n + m];
 	int k = 0;
 
+	cout << "Which array do you want to subtract from?" << endl;
+	cout << "1. The first one (A) - A \\ B" << endl;
+	cout << "2. The second one (B) - B \\ A" << endl;
 
 	if (whichArray() == 1) {
 		cout << endl;
@@ -137,26 +136,59 @@ void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) {
 	delete[]c;
 }
 
-bool isPodmnojestwo(int a[], int n, int b[], int m) {
+void isPodmnojestwo(int a[], int n, int b[], int m) {
 	int count = 0;
 
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			if (a[i] == b[j]) {
-				count++;
+	cout << "Koe mnojestwo iskate da prowerite dali se sydyrja w drugoto?" << endl;
+	cout << "1. The first one (A)" << endl;
+	cout << "2. The second one (B)" << endl;
+
+
+	if (whichArray() == 1) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (a[i] == b[j]) {
+					count++;
+				}
 			}
+		}
+
+		cout << endl;
+
+		if (count == n) {
+			cout << "A e podmnojestwo na B" << endl;
+		}
+		else {
+			cout << "A ne e podmnojestwo na B" << endl;
+		}
+	}
+	else {
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if (b[i] == a[j]) {
+					count++;
+				}
+			}
+		}
+
+		cout << endl;
+
+		if (count == n) {
+			cout << "B e podmnojestwo na A" << endl;
+		}
+		else {
+			cout << "B ne e podmnojestwo na A" << endl;
 		}
 	}
 
-	if (count == n)
-		return true;
-
-	return false;
+	
+		
 }
 
 void showWelcome()
 {
-	cout << "WELCOME TO OUR PROGRAM!" << endl << endl;
+	cout << "WELCOME TO OUR PROGRAM!" << endl;
+	cout << "To try it, you'll have to enter two sets of whole numbers" << endl<<endl;
 }
 
 void showMenu()
@@ -173,7 +205,8 @@ void showMenu()
 	cout << "2. Intersection" << endl;
 	cout << "3. Subtraction (difference)" << endl;
 	cout << "4. Symmetrical subtraction" << endl;
-	cout << "5. Quit " << endl << endl;
+	cout << "5. Podmnojestwo" << endl;
+	cout << "6. Quit " << endl << endl;
 	cout << "Please choose an option: ";
 }
 
@@ -198,7 +231,7 @@ void mainMenu()
 
 		cout << endl;
 
-		while ((choice < 1) or (choice > 5))
+		while ((choice < 1) or (choice > 6))
 		{
 			cout << "Please enter a valid menu option: ";
 			cin >> choice;
@@ -227,6 +260,10 @@ void mainMenu()
 				break;
 
 			case 5:
+				isPodmnojestwo(a, n, b, m);
+				break;
+
+			case 6:
 				cout << "Exiting....\n";
 				exit(0);
 				break;
@@ -234,7 +271,7 @@ void mainMenu()
 
 		cout << endl << endl<<endl;
 		
-	} while (choice != 5);
+	} while (choice != 6);
 }
 
 

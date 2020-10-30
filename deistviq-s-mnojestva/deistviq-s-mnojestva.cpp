@@ -1,6 +1,16 @@
 #include <iostream>
 using namespace std;
 
+void enterArrayElements(int array[], int& size, string number) {
+	cout << "Enter the size of the "<<number<<" array: ";
+	cin >> size;
+	cout << endl;
+
+	cout << "Enter the elements of the " << number << " array: ";
+	for (int i = 0; i < size; i++)
+		cin >> array[i];
+	cout << endl << endl;
+}
 
 int* sravnenie(int a[], int n, int b[], int m, string sign, int* c, int& k)
 {
@@ -71,12 +81,41 @@ void sechenie(int a[], int n, int b[], int m)
 	delete[]c;
 }
 
+int whichArray() {
+	int choice;
+
+	cout << "Razlikata na koi masiw iskate da namerite?" << endl;
+	cout << "1. The first one (A) - A \\ B" << endl;
+	cout << "2. The second one (B) - B \\ A" << endl;
+
+	cout << "Enter an option: ";
+	cin >> choice;
+
+	while (choice < 1 or choice > 2) {
+		cout << "Enter a valid option: ";
+		cin >> choice;
+	}
+
+	return choice;
+}
+
 void razlika(int a[], int n, int b[], int m)
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
 
-	sravnenie(a, n, b, m, "==", c, k);
+
+	if (whichArray() == 1) {
+		cout << endl;
+		cout << "Razlikata na mnojestwata (A \\ B) e: ";
+		sravnenie(a, n, b, m, "==", c, k);
+	}
+	else
+	{
+		cout << endl;
+		cout << "Razlikata na mnojestwata (B \\ A) e: ";
+		sravnenie(b, m, a, n, "==", c, k);
+	}
 
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
@@ -117,7 +156,7 @@ bool isPodmnojestwo(int a[], int n, int b[], int m) {
 
 void showWelcome()
 {
-	cout << "Welcome to our program" << endl << endl;
+	cout << "WELCOME TO OUR PROGRAM!" << endl << endl;
 }
 
 void showMenu()
@@ -138,58 +177,68 @@ void showMenu()
 	cout << "Please choose an option: ";
 }
 
-void mainMenu(int a[], int n, int b[], int m)
+void mainMenu()
 {
+	showWelcome();
+
+	int a[100], b[100], n, m;
+
+	enterArrayElements(a, n, "first");
+
+	enterArrayElements(b, m, "second");
+
 	int choice;
 	const int obedinenieChoice = 1, sechenieChoice = 2, razlikaChoice = 3, simetrichnaRazlikaChoice=4, quitChoice = 5;
-	showWelcome();
 	
 	do
 	{
 		showMenu();
+
 		cin >> choice;
-		while (choice < obedinenieChoice || choice > quitChoice)
+
+		cout << endl;
+
+		while ((choice < obedinenieChoice) or (choice > quitChoice))
 		{
-			cout << "Please enter a valid menu choice: ";
+			cout << "Please enter a valid menu option: ";
 			cin >> choice;
 		}
 
-		if (choice != quitChoice)
+		
+		switch (choice)
 		{
-			switch (choice)
-			{
 			case 1:
+				cout << "Obedinenieto na mnojestwata (A U B) e: ";
 				obedinenie(a,n,b,m);
-				cout << endl;
 				break;
 
 			case 2:
+				cout << "Sechenieto na mnojestwata (A  B) e: ";
 				sechenie(a, n, b, m);
-				cout << endl;
 				break;
 
 			case 3:
 				razlika(a, n, b, m);
 				break;
+
 			case 4:
+				cout << "Simetrichnata razlika na mnojestwata e: ";
 				simetrichnaRazlika(a, n, b, m);
-				cout << endl;
 				break;
+
 			case 5:
 				cout << "Exiting....\n";
+				exit(0);
 				break;
-			}
-
-			cout << endl << endl;
 		}
+
+		cout << endl << endl<<endl;
+		
 	} while (choice != quitChoice);
 }
 
 
 int main()
 {
-	int a[10] = { 3,5,6,11,9,23,7,21,18,0 };
-	int b[10] = { 4,8,9,0,13,22,34,11,1,45 };
-	system("Color 5");
-	mainMenu(a,10,b,10);
+	mainMenu();
 }

@@ -1,6 +1,31 @@
 #include <iostream>
 using namespace std;
 
+void sort(int arr[], int n)
+{
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
+int whichArray() {
+	int choice;
+
+	cout << "Enter an option: ";
+	cin >> choice;
+
+	while (choice < 1 or choice > 2) {
+		cout << "Enter a valid option: ";
+		cin >> choice;
+	}
+
+	return choice;
+}
+
 void enterArrayElements(int array[], int& size, string number) {
 	cout << "Enter the size of the "<<number<<" array: ";
 	cin >> size;
@@ -61,6 +86,8 @@ void unionOfSets(int a[], int n, int b[], int m) {
 
 	comparison(b, m, a, n, "==", c, k);
 
+	sort(c, k);
+
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
 
@@ -75,24 +102,12 @@ void intersectionOfSets(int a[], int n, int b[], int m)
 
 	comparison(a, n, b, m, "!=", c, k);
 
+	sort(c, k);
+
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
 
 	delete[]c;
-}
-
-int whichArray() {
-	int choice;
-
-	cout << "Enter an option: ";
-	cin >> choice;
-
-	while (choice < 1 or choice > 2) {
-		cout << "Enter a valid option: ";
-		cin >> choice;
-	}
-
-	return choice;
 }
 
 void subtractionOfSets(int a[], int n, int b[], int m)
@@ -116,6 +131,8 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 		comparison(b, m, a, n, "==", c, k);
 	}
 
+	sort(c, k);
+
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
 
@@ -129,6 +146,8 @@ void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) {
 	comparison(a, n, b, m, "==", c, k);
 
 	comparison(b, m, a, n, "==", c, k);
+
+	sort(c, k);
 
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
@@ -277,5 +296,6 @@ void mainMenu()
 
 int main()
 {
+	system("color 5");
 	mainMenu();
 }

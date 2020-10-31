@@ -192,7 +192,7 @@ void isPodmnojestwo(int a[], int n, int b[], int m) {
 
 		cout << endl;
 
-		if (count == n) {
+		if (count == m) {
 			cout << "B e podmnojestwo na A" << endl;
 		}
 		else {

@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-void sort(int arr[], int n) //function that sorts the elements of an array
+//function that sorts the elements of an array
+void sort(int arr[], int n) 
 {
 	for (int i = 0; i < n - 1; i++) {
 		for (int j = 0; j < n - i - 1; j++) {
@@ -12,7 +13,11 @@ void sort(int arr[], int n) //function that sorts the elements of an array
 	}
 }
 
-int whichArray() //function that returns the user's choice ("1" is for the first array; "2" is for the second array)
+/*
+function that returns the user's choice 
+("1" is for the first array; "2" is for the second array)
+*/
+int whichArray() 
 { 
 	int choice;
 
@@ -27,7 +32,8 @@ int whichArray() //function that returns the user's choice ("1" is for the first
 	return choice;
 }
 
-void enterArrayElements(int array[], int& size, string number) //function that makes the user to input numbers into the arrays 
+//function that makes the user to input numbers into the arrays
+void enterArrayElements(int array[], int& size, string number)  
 {
 	cout << "Enter the size of the "<<number<<" array: ";
 	cin >> size;
@@ -39,7 +45,11 @@ void enterArrayElements(int array[], int& size, string number) //function that m
 	cout << endl << endl;
 }
 
-int* comparison(int a[], int n, int b[], int m, string sign, int* c, int& k) //function that compares the elements of the first array with the elements of the second array
+/*
+function that compares the elements of the first 
+array with the elements of the second array
+*/
+int* comparison(int a[], int n, int b[], int m, string sign, int* c, int& k) 
 {
 	int count = 0;
 
@@ -77,7 +87,11 @@ int* comparison(int a[], int n, int b[], int m, string sign, int* c, int& k) //f
 	return c;
 }
 
-void unionOfSets(int a[], int n, int b[], int m) //function that finds the union of the elements of the first array with the elements of the second array
+/*
+function that finds the union of the elements of
+the first array with the elements of the second array
+*/
+void unionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
@@ -98,7 +112,11 @@ void unionOfSets(int a[], int n, int b[], int m) //function that finds the union
 
 }
 
-void intersectionOfSets(int a[], int n, int b[], int m) //function that finds the intersection of the elements of the first array with the elements of the second array
+/*
+function that finds the intersection of the elements of 
+the first array with the elements of the second array
+*/
+void intersectionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
@@ -113,7 +131,11 @@ void intersectionOfSets(int a[], int n, int b[], int m) //function that finds th
 	delete[]c;
 }
 
-void subtractionOfSets(int a[], int n, int b[], int m) //function that finds the substraction of the elements of the first array with the elements of the second array
+/*
+function that finds the substraction of the elements
+of the first array with the elements of the second array
+*/
+void subtractionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
@@ -142,7 +164,11 @@ void subtractionOfSets(int a[], int n, int b[], int m) //function that finds the
 	delete[]c;
 }
 
-void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) //function that finds the symmetrical subtraction of the elements of the first array with the elements of the second array
+/*
+function that finds the symmetrical subtraction of the elements 
+of the first array with the elements of the second array
+*/
+void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
 	int k = 0;
@@ -159,7 +185,11 @@ void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) //function tha
 	delete[]c;
 }
 
-void isPodmnojestwo(int a[], int n, int b[], int m) //function that finds if the elements of the first array are Podmnojestwo of the elements of the second array
+/*
+function that finds if the elements of the first array 
+are Podmnojestwo of the elements of the second array
+*/
+void isPodmnojestwo(int a[], int n, int b[], int m) 
 {
 	int count = 0;
 
@@ -209,13 +239,15 @@ void isPodmnojestwo(int a[], int n, int b[], int m) //function that finds if the
 		
 }
 
-void showWelcome() //function that prints the text in quotation mark written below
+//function that prints the text in quotation mark written below
+void showWelcome() 
 {
 	cout << "WELCOME TO OUR PROGRAM!" << endl;
 	cout << "To try it, you'll have to enter two sets of whole numbers" << endl<<endl;
 }
 
-void showMenu() //function that prints the Menu
+//function that prints the Menu
+void showMenu() 
 {
 
 	cout << "+---------------------------+" << endl;
@@ -234,7 +266,8 @@ void showMenu() //function that prints the Menu
 	cout << "Please choose an option: ";
 }
 
-void mainMenu() //function that makes the user to input the menu options
+//function that makes the user to input the menu options
+void mainMenu() 
 {
 	showWelcome();
 
@@ -298,8 +331,8 @@ void mainMenu() //function that makes the user to input the menu options
 	} while (choice != 6);
 }
 
-
-int main() //the main function
+//the main function
+int main() 
 {
 	system("color 5"); //changes the color to purple
 	mainMenu();

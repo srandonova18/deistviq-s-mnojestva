@@ -3,6 +3,20 @@
 #include "Presentation.h"
 using namespace std;
 
+void unionGraphic() {
+	cout << endl;
+	cout << "      * * *      * * *" << endl;
+	cout << "   **********  **********" << endl;
+	cout << " *********** ** ***********" << endl;
+	cout << "*********** **** ***********" << endl;
+	cout << "*********** **** ***********" << endl;
+	cout << "*********** **** ***********" << endl;
+	cout << " *********** ** ***********" << endl;
+	cout << "   **********  **********" << endl;
+	cout << "      * * *      * * * " << endl;
+	cout << endl;
+}
+                     
 /*
 function that returns the user's choice
 (1 is for the first array and 2 is for the second array)
@@ -191,6 +205,7 @@ void mainMenu()
 		switch (choice)
 		{
 		case 1:
+			unionGraphic();
 			cout << "- - - - - The union of the sets (A U B) is: ";
 			unionOfSets(a, n, b, m);
 			cout << "- - - - -";

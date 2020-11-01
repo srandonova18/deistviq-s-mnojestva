@@ -16,6 +16,20 @@ void unionGraphic() {
 	cout << "      * * *      * * * " << endl;
 	cout << endl;
 }
+
+void intersectionGraphic() {
+	cout << "       " << endl;
+	cout << "      * * *      * * *" << endl;
+	cout << "   *         **         *" << endl;
+	cout << " *          ****          *" << endl;
+	cout << "*          ******          *" << endl;
+	cout << "*          ******          *" << endl;
+	cout << "*          ******          *" << endl;
+	cout << " *          ****          *" << endl;
+	cout << "   *         **         *" << endl;
+	cout << "      * * *      * * * " << endl;
+	cout << "" << endl;
+}
                      
 /*
 function that returns the user's choice
@@ -212,6 +226,7 @@ void mainMenu()
 			break;
 
 		case 2:
+			intersectionGraphic();
 			cout << "- - - - - The intersection of the sets (A ∩ B) is: ";
 			intersectionOfSets(a, n, b, m);
 			cout << "- - - - -";

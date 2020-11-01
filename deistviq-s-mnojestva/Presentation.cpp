@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "Header.h"
 using namespace std;
 
@@ -53,6 +53,7 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 	int k = 0;
 
 	cout << "Which array do you want to subtract from?" << endl;
+	cout << endl;
 	cout << "1. The first one (A) - A \\ B" << endl;
 	cout << "2. The second one (B) - B \\ A" << endl;
 
@@ -87,8 +88,10 @@ void isSubset(int a[], int n, int b[], int m)
 	int count = 0;
 
 	cout << "Which set do you want to check if it is a subset of the other set?" << endl;
+	cout << endl;
 	cout << "1. The first one (A)" << endl;
 	cout << "2. The second one (B)" << endl;
+	cout << endl;
 
 
 	if (whichArray() == 1) {
@@ -193,7 +196,7 @@ void mainMenu()
 			break;
 
 		case 2:
-			cout << "- - - - - The intersection of the sets (A  B) is: ";
+			cout << "- - - - - The intersection of the sets (A ∩ B) is: ";
 			intersectionOfSets(a, n, b, m);
 			cout << "- - - - -";
 			break;

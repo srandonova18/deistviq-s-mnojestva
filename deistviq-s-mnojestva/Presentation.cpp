@@ -45,6 +45,20 @@ void subtractionOfAGraphic() {
 	cout << "" << endl;
 }
 
+void subtractionOfBGraphic() {
+	cout << "       " << endl;
+	cout << "      * * *      * * *" << endl;
+	cout << "   *         ************" << endl;
+	cout << " *          *  ************" << endl;
+	cout << "*          *    ************" << endl;
+	cout << "*          *    ************" << endl;
+	cout << "*          *    ************" << endl;
+	cout << " *          *  ************" << endl;
+	cout << "   *         ************" << endl;
+	cout << "      * * *      * * * " << endl;
+	cout << "" << endl;
+}
+
 /*
 function that returns the user's choice
 (1 is for the first array and 2 is for the second array)
@@ -107,7 +121,7 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 	}
 	else
 	{
-		cout << endl;
+		subtractionOfBGraphic();
 		cout << "- - - - - The subtraction of the sets (B \\ A) is: ";
 		comparison(b, m, a, n, "==", c, k);
 	}

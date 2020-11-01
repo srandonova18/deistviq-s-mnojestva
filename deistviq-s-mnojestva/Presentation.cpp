@@ -18,7 +18,7 @@ void unionGraphic() {
 }
 
 void intersectionGraphic() {
-	cout << "       " << endl;
+	cout << endl;
 	cout << "      * * *      * * *" << endl;
 	cout << "   *         **         *" << endl;
 	cout << " *          ****          *" << endl;
@@ -28,11 +28,11 @@ void intersectionGraphic() {
 	cout << " *          ****          *" << endl;
 	cout << "   *         **         *" << endl;
 	cout << "      * * *      * * * " << endl;
-	cout << "" << endl;
+	cout << endl;
 }
     
 void subtractionOfAGraphic() {
-	cout << "       " << endl;
+	cout << endl;
 	cout << "      * * *      * * *" << endl;
 	cout << "   ************         *" << endl;
 	cout << " ************  *          *" << endl;
@@ -42,11 +42,11 @@ void subtractionOfAGraphic() {
 	cout << " ************  *          *" << endl;
 	cout << "   ************         *" << endl;
 	cout << "      * * *      * * * " << endl;
-	cout << "" << endl;
+	cout << endl;
 }
 
 void subtractionOfBGraphic() {
-	cout << "       " << endl;
+	cout << endl;
 	cout << "      * * *      * * *" << endl;
 	cout << "   *         ************" << endl;
 	cout << " *          *  ************" << endl;
@@ -56,11 +56,11 @@ void subtractionOfBGraphic() {
 	cout << " *          *  ************" << endl;
 	cout << "   *         ************" << endl;
 	cout << "      * * *      * * * " << endl;
-	cout << "" << endl;
+	cout << endl;
 }
 
 void symmetricalSubtractionGraphic() {
-	cout << "       " << endl;
+	cout << endl;
 	cout << "      * * *      * * *" << endl;
 	cout << "   **********************" << endl;
 	cout << " ************  ************" << endl;
@@ -70,7 +70,21 @@ void symmetricalSubtractionGraphic() {
 	cout << " ************  ************" << endl;
 	cout << "   **********************" << endl;
 	cout << "      * * *      * * * " << endl;
-	cout << "" << endl;
+	cout << endl;
+}
+
+void subsetGraphic() {
+	cout << endl;
+	cout << "      * * *" << endl;
+	cout << "   *         *" << endl;
+	cout << " *        *    *" << endl;
+	cout << "*      *******  *" << endl;
+	cout << "*     ********* *" << endl;
+	cout << "*      *******  *" << endl;
+	cout << " *        *    *" << endl;
+	cout << "   *         *" << endl;
+	cout << "      * * *" << endl;
+	cout << endl;
 }
 
 /*
@@ -127,6 +141,7 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 	cout << endl;
 	cout << "1. The first one (A) - A \\ B" << endl;
 	cout << "2. The second one (B) - B \\ A" << endl;
+	cout << endl;
 
 	if (whichArray() == 1) {
 		subtractionOfAGraphic();
@@ -177,6 +192,7 @@ void isSubset(int a[], int n, int b[], int m)
 		cout << endl;
 
 		if (count == n) {
+			subsetGraphic();
 			cout << "- - - - - A is a subset of B - - - - -" << endl;
 		}
 		else {
@@ -195,6 +211,7 @@ void isSubset(int a[], int n, int b[], int m)
 		cout << endl;
 
 		if (count == m) {
+			subsetGraphic();
 			cout << "- - - - - B is a subset of A - - - - -" << endl;
 		}
 		else {

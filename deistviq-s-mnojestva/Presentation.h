@@ -12,6 +12,8 @@ void subtractionOfBGraphic();
 
 void symmetricalSubtractionGraphic();
 
+void subsetGraphic();
+
 int whichArray();
 
 void enterArrayElements(int array[], int& size, string number);

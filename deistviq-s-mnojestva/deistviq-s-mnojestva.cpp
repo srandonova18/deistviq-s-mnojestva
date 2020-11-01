@@ -1,6 +1,24 @@
 #include <iostream>
 using namespace std;
 
+//function that checks if the value entered is an integer
+int readInt() {
+
+	int number;
+
+	//while loop until the value entered is an integer
+	while (!(cin >> number)) {
+
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout << endl;
+		cout << "There seems to be a problem with your input. " << endl;
+		cout << "Please keep in mind that you have to enter a whole number (int). Try again: ";
+	}
+
+	return number;
+}
+
 //function that sorts the elements of an array
 void sort(int arr[], int n) 
 {
@@ -22,11 +40,11 @@ int whichArray()
 	int choice;
 
 	cout << "Enter an option: ";
-	cin >> choice;
+	choice=readInt();
 
 	while (choice < 1 or choice > 2) {
-		cout << "Enter a valid option: ";
-		cin >> choice;
+		cout << "\nYour input has to be either 1 or 2! Try again: ";
+		choice = readInt();
 	}
 
 	return choice;
@@ -37,12 +55,18 @@ elements for each of the two arrays*/
 void enterArrayElements(int array[], int& size, string number)  
 {
 	cout << "Enter the size of the "<<number<<" array: ";
-	cin >> size;
+
+	size = readInt();
+
+	while (size < 1) {
+		cout << "\nYour input has to be a whole positive number! Try again: ";
+		size = readInt();
+	}
 	cout << endl;
 
 	cout << "Enter the elements of the " << number << " array: ";
 	for (int i = 0; i < size; i++)
-		cin >> array[i];
+		array[i]=readInt();
 	cout << endl << endl;
 }
 
@@ -141,13 +165,13 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 
 	if (whichArray() == 1) {
 		cout << endl;
-		cout << "The subtraction of the sets (A \\ B) is: ";
+		cout << "- - - - - The subtraction of the sets (A \\ B) is: ";
 		comparison(a, n, b, m, "==", c, k);
 	}
 	else
 	{
 		cout << endl;
-		cout << "The subtraction of the sets (B \\ A) is: ";
+		cout << "- - - - - The subtraction of the sets (B \\ A) is: ";
 		comparison(b, m, a, n, "==", c, k);
 	}
 
@@ -155,6 +179,8 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 
 	for (int i = 0; i < k; i++)
 		cout << c[i] << " ";
+
+	cout << "- - - - -";
 
 	delete[]c;
 }
@@ -203,10 +229,10 @@ void isSubset(int a[], int n, int b[], int m)
 		cout << endl;
 
 		if (count == n) {
-			cout << "A is a subset of B" << endl;
+			cout << "- - - - - A is a subset of B - - - - -" << endl;
 		}
 		else {
-			cout << "A is not a subset of B" << endl;
+			cout << "- - - - - A is not a subset of B - - - - -" << endl;
 		}
 	}
 	else {
@@ -221,10 +247,10 @@ void isSubset(int a[], int n, int b[], int m)
 		cout << endl;
 
 		if (count == m) {
-			cout << "B is a subset of A" << endl;
+			cout << "- - - - - B is a subset of A - - - - -" << endl;
 		}
 		else {
-			cout << "B is not a subset of A" << endl;
+			cout << "- - - - - B is not a subset of A - - - - -" << endl;
 		}
 	}
 
@@ -254,9 +280,9 @@ void showMenu()
 	cout << "2. Intersection" << endl;
 	cout << "3. Subtraction (difference)" << endl;
 	cout << "4. Symmetrical subtraction" << endl;
-	cout << "5. Podmnojestwo" << endl;
+	cout << "5. Subset" << endl;
 	cout << "6. Quit " << endl << endl;
-	cout << "Please choose an option: ";
+	cout << "Please enter an option: ";
 }
 
 //function that displays the menu options, prompts the user to input data and prints the result
@@ -277,27 +303,28 @@ void mainMenu()
 	{
 		showMenu();
 
-		cin >> choice;
-
-		cout << endl;
+		choice = readInt();
 
 		while ((choice < 1) or (choice > 6))
 		{
-			cout << "Please enter a valid menu option: ";
-			cin >> choice;
+			cout << "\nYour input has to be a whole number between 1 and 6! Try again: ";
+			choice = readInt();
 		}
 
+		cout << endl;
 		
 		switch (choice)
 		{
 			case 1:
-				cout << "The union of the sets (A U B) is: ";
+				cout << "- - - - - The union of the sets (A U B) is: ";
 				unionOfSets(a,n,b,m);
+				cout << "- - - - -";
 				break;
 
 			case 2:
-				cout << "The intersection of the sets (A  B) is: ";
+				cout << "- - - - - The intersection of the sets (A  B) is: ";
 				intersectionOfSets(a, n, b, m);
+				cout << "- - - - -";
 				break;
 
 			case 3:
@@ -305,8 +332,9 @@ void mainMenu()
 				break;
 
 			case 4:
-				cout << "The symmetrical subtraction of the sets is: ";
+				cout << "- - - - - The symmetrical subtraction of the sets is: ";
 				symmetricalSubtractionOfSets(a, n, b, m);
+				cout << "- - - - -";
 				break;
 
 			case 5:
@@ -328,7 +356,7 @@ void mainMenu()
 int main() 
 {
 	//changes the color to purple
-	system("color 5"); 
+	//system("color 5"); 
 
 	mainMenu();
 }

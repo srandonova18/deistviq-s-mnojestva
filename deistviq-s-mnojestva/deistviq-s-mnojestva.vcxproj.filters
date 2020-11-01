@@ -18,7 +18,10 @@
     <ClCompile Include="deistviq-s-mnojestva.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Presentation.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>

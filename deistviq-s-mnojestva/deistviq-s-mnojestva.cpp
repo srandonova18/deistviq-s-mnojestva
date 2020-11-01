@@ -15,7 +15,7 @@ void sort(int arr[], int n)
 
 /*
 function that returns the user's choice 
-("1" is for the first array; "2" is for the second array)
+(1 is for the first array and 2 is for the second array)
 */
 int whichArray() 
 { 
@@ -32,7 +32,8 @@ int whichArray()
 	return choice;
 }
 
-//function that makes the user to input numbers into the arrays
+/*function that prompts the user to input a size number and 
+elements for each of the two arrays*/
 void enterArrayElements(int array[], int& size, string number)  
 {
 	cout << "Enter the size of the "<<number<<" array: ";
@@ -87,10 +88,7 @@ int* comparison(int a[], int n, int b[], int m, string sign, int* c, int& k)
 	return c;
 }
 
-/*
-function that finds the union of the elements of
-the first array with the elements of the second array
-*/
+//function that finds the union of two arrays
 void unionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
@@ -112,10 +110,7 @@ void unionOfSets(int a[], int n, int b[], int m)
 
 }
 
-/*
-function that finds the intersection of the elements of 
-the first array with the elements of the second array
-*/
+//function that finds the intersection of two arrays
 void intersectionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
@@ -132,8 +127,8 @@ void intersectionOfSets(int a[], int n, int b[], int m)
 }
 
 /*
-function that finds the substraction of the elements
-of the first array with the elements of the second array
+function that finds the substraction of the first and
+second array or vice versa
 */
 void subtractionOfSets(int a[], int n, int b[], int m) 
 {
@@ -164,10 +159,8 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 	delete[]c;
 }
 
-/*
-function that finds the symmetrical subtraction of the elements 
-of the first array with the elements of the second array
-*/
+
+//function that finds the symmetrical subtraction of two arrays
 void symmetricalSubtractionOfSets(int a[], int n, int b[], int m) 
 {
 	int* c = new int[(double)n + m];
@@ -186,14 +179,14 @@ void symmetricalSubtractionOfSets(int a[], int n, int b[], int m)
 }
 
 /*
-function that finds if the elements of the first array 
-are Podmnojestwo of the elements of the second array
+function that finds if the first array is a 
+subset of the second or vice versa
 */
-void isPodmnojestwo(int a[], int n, int b[], int m) 
+void isSubset(int a[], int n, int b[], int m) 
 {
 	int count = 0;
 
-	cout << "Koe mnojestwo iskate da prowerite dali se sydyrja w drugoto?" << endl;
+	cout << "Which set do you want to check if it is a subset of the other set?" << endl;
 	cout << "1. The first one (A)" << endl;
 	cout << "2. The second one (B)" << endl;
 
@@ -210,10 +203,10 @@ void isPodmnojestwo(int a[], int n, int b[], int m)
 		cout << endl;
 
 		if (count == n) {
-			cout << "A e podmnojestwo na B" << endl;
+			cout << "A is a subset of B" << endl;
 		}
 		else {
-			cout << "A ne e podmnojestwo na B" << endl;
+			cout << "A is not a subset of B" << endl;
 		}
 	}
 	else {
@@ -228,10 +221,10 @@ void isPodmnojestwo(int a[], int n, int b[], int m)
 		cout << endl;
 
 		if (count == m) {
-			cout << "B e podmnojestwo na A" << endl;
+			cout << "B is a subset of A" << endl;
 		}
 		else {
-			cout << "B ne e podmnojestwo na A" << endl;
+			cout << "B is not a subset of A" << endl;
 		}
 	}
 
@@ -239,14 +232,14 @@ void isPodmnojestwo(int a[], int n, int b[], int m)
 		
 }
 
-//function that prints the text in quotation mark written below
+//function that prints a welcoming message
 void showWelcome() 
 {
 	cout << "WELCOME TO OUR PROGRAM!" << endl;
 	cout << "To try it, you'll have to enter two sets of whole numbers" << endl<<endl;
 }
 
-//function that prints the Menu
+//function that prints the menu
 void showMenu() 
 {
 
@@ -266,7 +259,7 @@ void showMenu()
 	cout << "Please choose an option: ";
 }
 
-//function that makes the user to input the menu options
+//function that displays the menu options, prompts the user to input data and prints the result
 void mainMenu() 
 {
 	showWelcome();
@@ -317,7 +310,7 @@ void mainMenu()
 				break;
 
 			case 5:
-				isPodmnojestwo(a, n, b, m);
+				isSubset(a, n, b, m);
 				break;
 
 			case 6:
@@ -334,6 +327,8 @@ void mainMenu()
 //the main function
 int main() 
 {
-	system("color 5"); //changes the color to purple
+	//changes the color to purple
+	system("color 5"); 
+
 	mainMenu();
 }

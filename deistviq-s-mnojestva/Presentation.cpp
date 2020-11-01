@@ -3,6 +3,7 @@
 #include "Presentation.h"
 using namespace std;
 
+//function that graphically displays the union of two sets
 void unionGraphic() {
 	cout << endl;
 	cout << "      * * *      * * *" << endl;
@@ -17,6 +18,7 @@ void unionGraphic() {
 	cout << endl;
 }
 
+//function that graphically displays the intersection of two sets
 void intersectionGraphic() {
 	cout << endl;
 	cout << "      * * *      * * *" << endl;
@@ -30,7 +32,8 @@ void intersectionGraphic() {
 	cout << "      * * *      * * * " << endl;
 	cout << endl;
 }
-    
+
+//function that graphically displays the subtraction of the first set
 void subtractionOfAGraphic() {
 	cout << endl;
 	cout << "      * * *      * * *" << endl;
@@ -45,6 +48,7 @@ void subtractionOfAGraphic() {
 	cout << endl;
 }
 
+//function that graphically displays the subtraction of the second set
 void subtractionOfBGraphic() {
 	cout << endl;
 	cout << "      * * *      * * *" << endl;
@@ -59,6 +63,7 @@ void subtractionOfBGraphic() {
 	cout << endl;
 }
 
+//function that graphically displays the symmetrical subtraction of two sets
 void symmetricalSubtractionGraphic() {
 	cout << endl;
 	cout << "      * * *      * * *" << endl;
@@ -73,6 +78,7 @@ void symmetricalSubtractionGraphic() {
 	cout << endl;
 }
 
+//function that graphically displays a set and a subset within it
 void subsetGraphic() {
 	cout << endl;
 	cout << "      * * *" << endl;
@@ -106,8 +112,10 @@ int whichArray()
 	return choice;
 }
 
-/*function that prompts the user to input a size number and
-elements for each of the two arrays*/
+/*
+function that prompts the user to input a size number and
+elements for each of the two arrays
+*/
 void enterArrayElements(int array[], int& size, string number)
 {
 	cout << "Enter the size of the " << number << " array: ";
@@ -286,7 +294,7 @@ void mainMenu()
 
 		case 2:
 			intersectionGraphic();
-			cout << "- - - - - The intersection of the sets (A ∩ B) is: ";
+			cout << "- - - - - The intersection of the sets (A " << u8"\u2229" << " B) is: ";
 			intersectionOfSets(a, n, b, m);
 			cout << "- - - - -";
 			break;

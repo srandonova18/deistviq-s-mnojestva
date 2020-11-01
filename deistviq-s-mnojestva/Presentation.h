@@ -10,6 +10,8 @@ void subtractionOfAGraphic();
 
 void subtractionOfBGraphic();
 
+void symmetricalSubtractionGraphic();
+
 int whichArray();
 
 void enterArrayElements(int array[], int& size, string number);

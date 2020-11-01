@@ -59,6 +59,20 @@ void subtractionOfBGraphic() {
 	cout << "" << endl;
 }
 
+void symmetricalSubtractionGraphic() {
+	cout << "       " << endl;
+	cout << "      * * *      * * *" << endl;
+	cout << "   **********************" << endl;
+	cout << " ************  ************" << endl;
+	cout << "************    ************" << endl;
+	cout << "************    ************" << endl;
+	cout << "************    ************" << endl;
+	cout << " ************  ************" << endl;
+	cout << "   **********************" << endl;
+	cout << "      * * *      * * * " << endl;
+	cout << "" << endl;
+}
+
 /*
 function that returns the user's choice
 (1 is for the first array and 2 is for the second array)
@@ -265,6 +279,7 @@ void mainMenu()
 			break;
 
 		case 4:
+			symmetricalSubtractionGraphic();
 			cout << "- - - - - The symmetrical subtraction of the sets is: ";
 			symmetricalSubtractionOfSets(a, n, b, m);
 			cout << "- - - - -";

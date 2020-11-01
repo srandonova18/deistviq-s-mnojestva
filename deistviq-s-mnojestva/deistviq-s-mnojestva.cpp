@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Header.h"
+#include "Presentation.h"
+#include "Data.h"
 using namespace std;
 
 //the main function

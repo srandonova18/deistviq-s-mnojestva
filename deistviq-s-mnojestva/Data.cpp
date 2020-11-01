@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Header.h"
+#include "Data.h"
+#include "Presentation.h"
 using namespace std;
 
 //function that checks if the value entered is an integer

@@ -18,15 +18,18 @@
     <ClCompile Include="deistviq-s-mnojestva.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Presentation.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="Data.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Presentation.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="Presentation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

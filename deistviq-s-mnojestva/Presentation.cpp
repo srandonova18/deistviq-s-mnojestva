@@ -30,7 +30,21 @@ void intersectionGraphic() {
 	cout << "      * * *      * * * " << endl;
 	cout << "" << endl;
 }
-                     
+    
+void subtractionOfAGraphic() {
+	cout << "       " << endl;
+	cout << "      * * *      * * *" << endl;
+	cout << "   ************         *" << endl;
+	cout << " ************  *          *" << endl;
+	cout << "************    *          *" << endl;
+	cout << "************    *          *" << endl;
+	cout << "************    *          *" << endl;
+	cout << " ************  *          *" << endl;
+	cout << "   ************         *" << endl;
+	cout << "      * * *      * * * " << endl;
+	cout << "" << endl;
+}
+
 /*
 function that returns the user's choice
 (1 is for the first array and 2 is for the second array)
@@ -87,7 +101,7 @@ void subtractionOfSets(int a[], int n, int b[], int m)
 	cout << "2. The second one (B) - B \\ A" << endl;
 
 	if (whichArray() == 1) {
-		cout << endl;
+		subtractionOfAGraphic();
 		cout << "- - - - - The subtraction of the sets (A \\ B) is: ";
 		comparison(a, n, b, m, "==", c, k);
 	}
